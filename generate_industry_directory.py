@@ -1,13 +1,13 @@
 import os
 
-# List of categories
+# List of categories (industries)
 categories = [
     "Technology", "Healthcare", "Finance", "Insurance", "Manufacturing", 
     "Retail", "Energy", "Media", "Agriculture", "Construction"
 ]
 
 # List of file types
-file_types = ["Images", "Audio", "Videos", "FlatFiles", "SemiStructuredFiles","pdfs"]
+file_types = ["Images", "Audio", "Videos", "FlatFiles", "SemiStructuredFiles", "pdfs"]
 
 # Create the folder structure and text files
 def create_folders_and_files():
@@ -16,8 +16,13 @@ def create_folders_and_files():
         category_path = os.path.join(os.getcwd(), category)  # Use the current directory
         os.makedirs(category_path, exist_ok=True)
         
+        # Create the "data" folder inside each industry folder
+        data_folder_path = os.path.join(category_path, "data")
+        os.makedirs(data_folder_path, exist_ok=True)
+        
         for file_type in file_types:
-            file_type_path = os.path.join(category_path, file_type)
+            # Create subfolders for each file type inside the "data" folder
+            file_type_path = os.path.join(data_folder_path, file_type)
             os.makedirs(file_type_path, exist_ok=True)
             
             # Create a .txt file in each subfolder
