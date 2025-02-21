@@ -7,7 +7,7 @@ categories = [
 ]
 
 # List of file types
-file_types = ["Images", "Audio", "Videos", "FlatFiles", "SemiStructuredFiles"]
+file_types = ["Images", "Audio", "Videos", "FlatFiles", "SemiStructuredFiles","pdfs"]
 
 # Create the folder structure and text files
 def create_folders_and_files():
